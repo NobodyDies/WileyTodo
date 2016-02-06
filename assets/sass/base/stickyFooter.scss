@@ -1,0 +1,16 @@
+html, body {
+	height: 100%;
+}
+#wrapper {
+	height: auto;
+	min-height: 100%;
+}
+#body {
+	padding-bottom: $footerHeight;
+}
+#footer {
+	height: $footerHeight;
+	margin-top: -$footerHeight;
+	clear: both;
+	position: relative;
+}
