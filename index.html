@@ -21,70 +21,43 @@
 			<a href="#" class="brand-logo center">Todo</a>
 		</div>
 	</nav>
-	<div class="container">
+	<div class="container" id="app">
 		<div class="row">
 			<div class="col s12 m8 offset-m2 l6 offset-l3 z-depth-1 tasks">
 				<div class="row task-head">
 					<div class="input-field col s12">
-						<input id="title" type="text">
-	          <label for="title">New task</label>
+						<input id="title" type="text" v-model="newTask" @keyup.enter="addTask">
+						<label for="title">New task</label>
 					</div>
 				</div>
 				<div class="row task-list">
 					<ul class="collection">
-							<li class="collection-item">
-								<div>
-									<input type="checkbox" id="uid1">
-									<label
-										for="uid1"
-										class="left tooltipped"
-										data-position="bottom"
-										data-delay="100"
-										data-tooltip="Mark as finished"
-									></label>
-									<span class="truncate">Alan</span>
-									<span class="secondary-content">
+						<li class="collection-item" :class="{complited: task.complited}" v-for="task in tasks | orderBy 'title' order">
+							<div>
+								<input type="checkbox" id="uid{{ task.uid }}" v-model="task.complited">
+								<label for="uid{{ task.uid }}" class="left tooltipped" data-position="bottom" data-delay="100" data-tooltip="Mark as finished" @cilck="toggleComplition(task)"></label>
+								<span class="truncate title">
+									{{ task.title }}
+								</span>
+								<span class="secondary-content">
 										<i
 											class="material-icons tooltipped"
 											data-position="bottom"
 											data-delay="100"
 											data-tooltip="Delete task"
+											@click="deleteTask(task)"
 										>close</i>
 									</span>
-								</div>
-							</li>
-							<li class="collection-item">
-								<div>
-									<input type="checkbox" id="uid2">
-									<label for="uid2" class="left"></label>
-									<span class="title">Alanzxccdssdsdfsdb cnsvdhcsdjsdhcjhsd chgdchgavcakj cbsjvjshdc</span>
-									<span class="secondary-content"><i class="material-icons">close</i></span>
-								</div>
-							</li>
-							<li class="collection-item">
-								<div>
-									<input type="checkbox" id="uid3">
-									<label for="uid3" class="left"></label>
-									<span class="truncate">Alan</span>
-									<span class="secondary-content"><i class="material-icons">close</i></span>
-								</div>
-							</li>
-							<li class="collection-item">
-								<div>
-									<input type="checkbox" id="uid4">
-									<label for="uid4" class="left"></label>
-									<span class="truncate">Alan</span>
-									<span class="secondary-content"><i class="material-icons">close</i></span>
-								</div>
-							</li>
-						</ul>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
-	<script src="node_modules/vue/dist/vue.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>
