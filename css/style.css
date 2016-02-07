@@ -12,6 +12,9 @@ nav {
 .tasks .task-controls .btn-flat {
   padding: 0 10px; }
 
+.tasks .task-controls .done {
+  color: #009688; }
+
 .tasks .collection {
   border: none;
   margin-bottom: 0;

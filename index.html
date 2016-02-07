@@ -34,14 +34,9 @@
 					<a class="waves-effect waves-teal btn-flat left">
 						<i
 							class="material-icons"
+							:class="{done: allComplited}"
 							@click="toggleAllComplited()"
 						>done</i>
-					</a>
-					<a class="waves-effect waves-teal btn-flat right">
-						<i
-							class="material-icons"
-							@click="deleteTask(task)"
-						>keyboard_arrow_down</i>
 					</a>
 					<a class="waves-effect waves-teal btn-flat right">
 						<i
