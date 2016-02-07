@@ -5,30 +5,55 @@
 	<meta charset="UTF-8">
 	<title>Todo App</title>
 	<!--Import Google Icon Font-->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<link type="text/css" rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css">
 
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 
 	<!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-	<div id="wrapper">
-		<div id="header">
-
+	<nav>
+		<div class="container nav-wrapper">
+			<a href="#" class="brand-logo center">Todo</a>
 		</div>
-		<div id="nav">
-
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col s12 m6 offset-m3">
+				<div class="input-field col s12">
+					<input id="title" type="text">
+          <label for="title">New task</label>
+				</div>
+			</div>
+			<div class="col s12 m6 offset-m3">
+				<ul class="collection">
+					<li class="collection-item">
+						<input type="checkbox">
+						<span class="truncate">Alan</span>
+						<span class="secondary-content"><i class="material-icons">close</i></span>
+					</li>
+					<li class="collection-item">
+						<input type="checkbox">
+						<span class="truncate">Alan</span>
+						<span class="secondary-content"><i class="material-icons">close</i></span>
+					</li>
+					<li class="collection-item">
+						<input type="checkbox">
+						<span class="truncate">Alan</span>
+						<span class="secondary-content"><i class="material-icons">close</i></span>
+					</li>
+					<li class="collection-item">
+						<input type="checkbox">
+						<span class="truncate">Alan</span>
+						<span class="secondary-content"><i class="material-icons">close</i></span>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<div id="body">
-
-		</div>
-	</div>
-	<div id="footer">
-
 	</div>
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
