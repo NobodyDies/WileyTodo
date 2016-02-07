@@ -8,7 +8,18 @@ new Vue({
     newTask: '',
     order: -1
   },
-  created() {
+  computed: {
+    allComplited() {
+      var uncomplited = this.tasks.filter((task)=>{
+        return task.complited == false;
+      });
+      console.log(uncomplited);
+      if(uncomplited.length > 0) {
+        return false;
+      } else {
+        return true;
+      }
+    }
   },
   methods: {
     addTask() {
@@ -28,6 +39,14 @@ new Vue({
       var index = this.tasks.indexOf(task);
       if (index > -1) {
         this.tasks.splice(index, 1);
+      }
+      Lockr.set('tasks', this.tasks);
+    },
+    toggleAllComplited() {
+      var length = this.tasks.length;
+      var allComplited = !this.allComplited;
+      for (var i = 0; i < length; i++) {
+        this.tasks[i].complited = allComplited;
       }
       Lockr.set('tasks', this.tasks);
     }

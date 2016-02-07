@@ -18,8 +18,19 @@ new _vue2.default({
     newTask: '',
     order: -1
   },
-  created: function created() {},
-
+  computed: {
+    allComplited: function allComplited() {
+      var uncomplited = this.tasks.filter(function (task) {
+        return task.complited == false;
+      });
+      console.log(uncomplited);
+      if (uncomplited.length > 0) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  },
   methods: {
     addTask: function addTask() {
       this.tasks.push({
@@ -38,6 +49,14 @@ new _vue2.default({
       var index = this.tasks.indexOf(task);
       if (index > -1) {
         this.tasks.splice(index, 1);
+      }
+      _lockr2.default.set('tasks', this.tasks);
+    },
+    toggleAllComplited: function toggleAllComplited() {
+      var length = this.tasks.length;
+      var allComplited = !this.allComplited;
+      for (var i = 0; i < length; i++) {
+        this.tasks[i].complited = allComplited;
       }
       _lockr2.default.set('tasks', this.tasks);
     }

@@ -6,6 +6,11 @@ nav {
 
 .tasks .task-list {
   border-top: 1px solid #e0e0e0; }
+  .tasks .task-list[v-cloak] {
+    display: none; }
+
+.tasks .task-controls .btn-flat {
+  padding: 0 10px; }
 
 .tasks .collection {
   border: none;
@@ -27,6 +32,51 @@ nav {
     position: absolute;
     top: 9px;
     right: 9px;
-    cursor: pointer; }
+    cursor: pointer;
+    color: #ef5350; }
+
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@-webkit-keyframes fadeOutRight {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0); } }
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0); } }
+
+.task-animation-leave {
+  -webkit-animation: fadeOutRight .3s;
+  animation: fadeOutRight .3s; }
+
+.task-animation-enter {
+  -webkit-animation: fadeInLeft .3s;
+  animation: fadeInLeft .3s; }
 
 /*# sourceMappingURL=style.css.map */
