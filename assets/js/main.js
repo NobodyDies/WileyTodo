@@ -6,7 +6,7 @@ new Vue({
   data: {
     tasks: Lockr.get('tasks')?Lockr.get('tasks'):[],
     newTask: '',
-    order: -1
+    order: Lockr.get('order')?Lockr.get('order'):-1
   },
   computed: {
     allComplited() {
@@ -18,6 +18,13 @@ new Vue({
         return false;
       } else {
         return true;
+      }
+    },
+    orderIcon() {
+      if(this.order < 0) {
+        return 'keyboard_arrow_up'
+      } else {
+        return 'keyboard_arrow_down'
       }
     }
   },
@@ -49,6 +56,10 @@ new Vue({
         this.tasks[i].complited = allComplited;
       }
       Lockr.set('tasks', this.tasks);
+    },
+    toggleOrder() {
+      this.order = this.order<0?1:-1;
+      Lockr.set('order', this.order);
     }
   }
 })

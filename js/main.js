@@ -16,7 +16,7 @@ new _vue2.default({
   data: {
     tasks: _lockr2.default.get('tasks') ? _lockr2.default.get('tasks') : [],
     newTask: '',
-    order: -1
+    order: _lockr2.default.get('order') ? _lockr2.default.get('order') : -1
   },
   computed: {
     allComplited: function allComplited() {
@@ -28,6 +28,13 @@ new _vue2.default({
         return false;
       } else {
         return true;
+      }
+    },
+    orderIcon: function orderIcon() {
+      if (this.order < 0) {
+        return 'keyboard_arrow_up';
+      } else {
+        return 'keyboard_arrow_down';
       }
     }
   },
@@ -59,6 +66,10 @@ new _vue2.default({
         this.tasks[i].complited = allComplited;
       }
       _lockr2.default.set('tasks', this.tasks);
+    },
+    toggleOrder: function toggleOrder() {
+      this.order = this.order < 0 ? 1 : -1;
+      _lockr2.default.set('order', this.order);
     }
   }
 });
