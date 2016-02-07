@@ -1,4 +1,26 @@
 nav {
   line-height: 64px; }
 
+.tasks .row {
+  margin-bottom: 0; }
+
+.tasks .task-list {
+  border-top: 1px solid #e0e0e0; }
+
+.tasks .collection {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0; }
+
+.tasks .collection-item {
+  position: relative;
+  border-left: none;
+  border-right: none;
+  padding: 10px 40px 10px 20px; }
+  .tasks .collection-item .secondary-content {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    cursor: pointer; }
+
 /*# sourceMappingURL=style.css.map */

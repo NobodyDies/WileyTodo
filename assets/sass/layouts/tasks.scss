@@ -1,0 +1,25 @@
+.tasks {
+  .row {
+    margin-bottom: 0;
+  }
+  .task-list {
+    border-top: 1px solid #e0e0e0;
+  }
+  .collection {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .collection-item {
+    position: relative;
+    border-left: none;
+    border-right: none;
+    padding: 10px 40px 10px 20px;
+    .secondary-content {
+      position: absolute;
+      top: 9px;
+      right: 9px;
+      cursor: pointer;
+    }
+  }
+}
